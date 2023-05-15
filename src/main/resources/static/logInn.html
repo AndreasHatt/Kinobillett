@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Innlogging</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="index.js"></script>
+    <script src="logInn.js"></script>
+    <script src="validering.js"></script>
+    <script src="registrer.js"></script>
+</head>
+
+<body>
+
+<h1>Logg inn for å se biletter</h1>
+<table>
+    <tr>
+        <td>
+            <label for="brukernavn">Brukernavn:</label>
+        </td>
+        <td>
+            <input type="text" id="brukernavn">
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <label for="passord">Passord:</label>
+        </td>
+        <td>
+            <input type="password" id="passord">
+        </td>
+    </tr>
+</table>
+<div id="feilLoggInn" style="color: red"></div>
+<button onclick="loggInn()">Logg Inn</button>
+<button onclick="location.href='index.html'">Avbryt</button>
+
+</body>
+</html>

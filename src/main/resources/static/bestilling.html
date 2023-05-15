@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kinobilett</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="index.js"></script>
+    <script src="validering.js"></script>
+    <script src="logInn.js"></script>
+</head>
+<body>
+
+<h1>Bestilling av kinobiletter</h1>
+
+<table>
+    <tr>
+        <td>
+            <label for="film">Velg film:</label>
+        </td>
+        <td>
+            <select id="film">
+                <option disabled selected hidden>Velg film her</option>
+                <option>Harry potter</option>
+                <option>Star wars</option>
+                <option>Black panther</option>
+                <option>Scream</option>
+            </select>
+        </td>
+        <td>
+            <div id="feilFilm"></div>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <br>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <label for="antall">Antall</label>
+        </td>
+        <td>
+            <input type="text" id="antall" onchange="validerAntall(this.value)" style="width: 15px">
+        </td>
+        <td>
+            <div id="feilAntall" style="color: red"></div>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <br>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <label for="fornavn">Fornavn</label>
+        </td>
+        <td>
+            <input type="text" id="fornavn" onchange="validerFornavn(this.value)">
+        </td>
+        <td>
+            <div id="feilFornavn" style="color: red"></div>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <label for="etternavn">Etternavn</label>
+        </td>
+        <td>
+            <input type="text" id="etternavn" onchange="validerEtternavn(this.value)">
+        </td>
+        <td>
+            <div id="feilEtternavn" style="color: red"></div>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <label for="tlfNmr">Telefonnr</label>
+        </td>
+        <td>
+            <input type="text" id="tlfNmr" onchange="validerTlfNmr(this.value)">
+        </td>
+        <td>
+            <div id="feilTlfNmr" style="color: red"></div>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <label for="epost">Epost</label>
+        </td>
+        <td>
+            <input type="text" id="epost" onchange="validerEpost(this.value)">
+        </td>
+        <td>
+            <div id="feilEpost" style="color: red"></div>
+        </td>
+    </tr>
+</table>
+<button onclick="validerOgLagreKunde()">Kjøp billett</button>
+<button onclick="location.href='index.html'">Avbryt</button>
+</body>
+</html>
