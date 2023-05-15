@@ -11,6 +11,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.io.IOException;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 @RestController
@@ -64,12 +67,22 @@ public class KinoController {
             if (kino==null){
                 response.sendError(HttpStatus.INTERNAL_SERVER_ERROR.value(), "Feil med å vise bilettene - prøv igjen senere");
             }
-            return kino;
+            return sortByEtternavn(kino);
         }
         else {
             response.sendError(HttpStatus.NOT_FOUND.value(), "Kan ikke vise biletter: Du er ikke logget inn!");
             return null;
         }
+    }
+
+    public List<Kino> sortByEtternavn(List<Kino> billetter){
+        Collections.sort(billetter, new Comparator<Kino>() {
+            @Override
+            public int compare(Kino o1, Kino o2) {
+                return o1.getEtternavn().compareTo(o2.getEtternavn());
+            }
+        });
+        return billetter;
     }
 
     @GetMapping("/slettBillett")
